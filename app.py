@@ -1,10 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory
 import cv2
-# import keras
-# from tensorflow.keras.layers.experimental import preprocessing
-# from tensorflow.keras.models import Sequential
-# from keras.layers import Dense, Dropout, Conv2D, MaxPool2D, Flatten
-# from keras.regularizers import l2
 import numpy as np
 from keras.models import load_model
 
@@ -61,7 +56,6 @@ def home():
     a = round(prediction[0,0], 2)
     b = round(prediction[0,1], 2)
     c = round(prediction[0,2], 2)
-    d = round(prediction[0,3], 2)
     preds = np.array([a, b, c, d])
     COUNT += 1
     return render_template('prediction.html', data=preds)
