@@ -56,7 +56,7 @@ def home():
     a = round(prediction[0,0], 2)
     b = round(prediction[0,1], 2)
     c = round(prediction[0,2], 2)
-    preds = np.array([a, b, c, d])
+    preds = np.array([a, b, c])
     COUNT += 1
     return render_template('prediction.html', data=preds)
 
