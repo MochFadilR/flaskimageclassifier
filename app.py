@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory
-import cv2
 import numpy as np
 from keras.models import load_model
+import cv2
 
 
 # model = Sequential()
