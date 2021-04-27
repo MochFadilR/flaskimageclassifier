@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
 import numpy as np
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 import cv2
 
 
