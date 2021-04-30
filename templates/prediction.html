@@ -8,14 +8,19 @@
     <body>
         <center>
 
-        <h1>
-            acc
-            <br> BCC: <span>{{data[0]}}</span> <br>MEL: <span>{{data[1]}}</span><br>
-            <br> NV: <span>{{data[2]}}</span>
-        </h1>
+        <h2>
+            结果
+            <hr>
+            <br>基底细胞癌: <span>{{data[0]}}</span>
+            <br>黑素瘤: <span>{{data[1]}}</span>
+            <br>黑素细胞痣: <span>{{data[2]}}</span>
+        </h2>
             
             <img src="{{url_for('load_img')}}" alt='img'>
-            <a href="/" class='btn'>go back</a>
+            <br>
+            <br>
+            <br>
+            <a href="/" class='submit'>返回</a>
 
         </center>
         

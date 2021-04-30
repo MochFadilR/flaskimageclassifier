@@ -4,20 +4,46 @@
         <title></title>
         <meta charset="UTF-8">
         <link href="static/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap" rel="stylesheet">  
     </head>
     <body>    
         <center>
             <div class='cont'>
-                <h2>WELCOME<br> TO CAT-DOG PREDICTION</h2>
+                <h1>医学病灶识别</h1>
+                <p>请输入疑似<strong>基底细胞癌</strong>、<strong>黑色素瘤</strong>和<strong>黑素细胞痣</strong>的图像</p>
+            </div>
+
+            <h3>下面是用于预测的图片示例</h3>
+            <div class="example">
+                <img src="../static/ISIC_0000146_downsampled.jpg" alt="BCC">
+                <img src="../static/ISIC_0000187.jpg" alt="MEL">
+                <img src="../static/ISIC_0025383.jpg" alt="NV">
             </div>
             
 
         <form method="POST" action="{{url_for('home')}}" enctype="multipart/form-data">
-            <input type="file" name='image' class='btn'><br><br><br>
-            <input type="submit" class='btn'>
+            <div class="choose">
+                <label for="files" class="file-select">选择要分类的图像</label>
+                <input id="files" style="visibility:hidden;" type="file" name="image">
+            </div>  
+            <br>
+            <input type="submit" class="submit" value="提交" />
         </form>
 
-    </center>
+        </center>
+
+        
+        <script>
+            $("#files").change(function() {
+            filename = this.files[0].name
+            console.log(filename)
+            $("label").html(filename)
+            });
+        </script>
 
     </body>
 </html>
